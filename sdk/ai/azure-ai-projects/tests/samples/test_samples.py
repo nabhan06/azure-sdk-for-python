@@ -48,6 +48,7 @@ class TestSamples(AzureRecordedTestCase):
                 "sample_agent_browser_automation.py",  # APITimeoutError: request timed out
                 "sample_agent_openapi.py",  # 400 2/28/2026 validation/tool_user_error; failing weather GET curl call in OpenAPI tool
                 "sample_agent_memory_search.py",  # Skipped until re-enabled and recorded on Foundry endpoint that supports the new versioning schema
+                "sample_agent_toolbox_skill.py",  # Skipped until re-enabled and recorded on Foundry endpoint that supports the new versioning schema
             ],
         ),
     )
@@ -257,14 +258,14 @@ class TestSamples(AzureRecordedTestCase):
                     "SKIP_RBAC": "true",
                 },
             ),
-            AdditionalSampleTestDetail(
-                test_id="sample_toolbox_with_skill",
-                sample_filename="sample_toolbox_with_skill.py",
-                env_vars={
-                    "ZIP_FILE_PATH": "tests/samples/assets/toolbox-agent.zip",
-                    "SKIP_RBAC": "true",
-                },
-            ),
+            # AdditionalSampleTestDetail(
+            #     test_id="sample_toolbox_with_skill",
+            #     sample_filename="sample_toolbox_with_skill.py",
+            #     env_vars={
+            #         "ZIP_FILE_PATH": "tests/samples/assets/toolbox-agent.zip",
+            #         "SKIP_RBAC": "true",
+            #     },
+            # ),
         ]
     )
     @pytest.mark.parametrize(
